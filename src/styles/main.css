@@ -22,12 +22,170 @@ body {
   padding: 1rem;
 }
 
+/* header */
 .header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
+.header input[type="text"] {
+  width: 15rem;
+  font-size: 1rem;
+}
+
+/* left sidebar */
+.filter-list {
+  list-style: none;
+  padding: 0;
+}
+
+.filter-list button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.filter-list .active-filter {
+  font-weight: bold;
+  background-color: #ddd;
+}
+
+/* tasks */
 .task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.task-card {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-checkboxes {
+  display: flex;
+  gap: 1rem;
+}
+
+.task-tags {
+  margin-top: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-right: 5px;
+}
+
+.tag.important {
+  background-color: gold;
+}
+
+.tag.completed {
+  background-color: lightgreen;
+}
+
+.task-actions button {
+  margin-left: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: red;
+}
+
+.task-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.task-info {
   flex: 1;
+}
+
+/* modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-form input[type="text"],
+.modal-form textarea,
+.modal-form input[type="date"] {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/* === DARK MODE STYLES === */
+.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark .sidebar-left,
+.dark .sidebar-right {
+  background-color: #1e1e1e;
+}
+
+.dark .main-content {
+  background-color: #181818;
+}
+
+.dark .task-card {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+.dark .tag.important {
+  background-color: #d4af37;
+}
+
+.dark .tag.completed {
+  background-color: #4caf50;
+}
+
+.dark .task-actions button {
+  color: #ff6b6b;
 }
